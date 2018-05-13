@@ -1,0 +1,19 @@
+﻿<h2>ASP.NET Core Azure AD Authentication</h2>
+
+<p>You've reached <strong>home</strong> page at @DateTime.Now.ToString()</p>
+
+<div>
+    <h1>Hello @User.Identity.Name</h1>
+    <ul>
+        @foreach (var claim in User.Claims)
+        {
+            <li>
+                <em>@claim.Type</em>: @claim.Value
+            </li>
+        }
+    </ul>
+</div>
+
+<form method="post" asp-controller="Security" asp-action="Logout">
+    <button type="submit">Logout</button>
+</form>
